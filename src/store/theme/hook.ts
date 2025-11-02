@@ -35,6 +35,33 @@ import settingState from '@/store/setting/state'
 //   return value
 // }
 
+// src/store/theme/hook.ts (À©Õ¹)
+export const useFontShadowSettings = () => {
+  const [value, update] = useState(
+    settingState.setting['theme.fontShadowSettings'] || {
+      radius: 1.6,
+      dx: 1.5,
+      dy: 1.3,
+      color: 'rgba(0, 0, 0, 0.15)',
+    }
+  );
+
+  useEffect(() => {
+    const handleUpdate = (keys: Array<keyof LX.AppSetting>, setting: Partial<LX.AppSetting>) => {
+      if (!keys.includes('theme.fontShadowSettings')) return;
+      requestAnimationFrame(() => {
+        update(setting['theme.fontShadowSettings']!);
+      });
+    };
+    global.state_event.on('configUpdated', handleUpdate);
+    return () => {
+      global.state_event.off('configUpdated', handleUpdate);
+    };
+  }, []);
+
+  return value;
+};
+
 export const useTheme = () => useContext(ThemeContext)
 
 export const useTextShadow = () => {

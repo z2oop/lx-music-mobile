@@ -51,6 +51,21 @@ declare global {
        */
       'common.homePageScroll': boolean
 
+        // ... 其他配置项（保持原有）
+  /**
+   * 是否启用字体阴影
+   */
+  'theme.fontShadow': boolean;
+  /**
+   * 字体阴影设置
+   */
+  'theme.fontShadowSettings': {
+    radius: number;
+    dx: number;
+    dy: number;
+    color: string;
+  };
+
       /**
        * 是否显示返回按钮
        */

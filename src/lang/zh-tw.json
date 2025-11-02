@@ -12,6 +12,7 @@
   "change_position_music_multi_title": "將已選的 {num} 首歌曲的位置調整到",
   "change_position_music_title": "將「{name}」的位置調整到",
   "change_position_tip": "請輸入新的位置",
+  "setting_basic_theme_font_shadow_settings": "Font Shadow Settings",
   "close": "關閉",
   "collect": "收藏",
   "collect_songlist": "收藏歌單",

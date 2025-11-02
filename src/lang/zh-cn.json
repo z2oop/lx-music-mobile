@@ -512,5 +512,6 @@
   "version_title_latest": "🎉 当前版本已是最新 🎊",
   "version_title_new": "🌟 发现新版本 🌟",
   "version_title_unknown": "❓ 获取最新版本信息失败 ❓",
-  "version_title_update": "🚀 软件更新 🚀"
+  "version_title_update": "🚀 软件更新 🚀",
+  "setting_basic_theme_font_shadow_settings": "字体阴影设置"
 }

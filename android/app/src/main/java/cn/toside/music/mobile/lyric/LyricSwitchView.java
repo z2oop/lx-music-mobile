@@ -18,6 +18,24 @@ import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
 
+// android/app/src/main/java/cn/toside/music/mobile/lyric/LyricSwitchView.java
+public void updateShadowSettings(float radius, float dx, float dy, int color) {
+    for (TextView v : viewArray) {
+        v.setShadowLayer(radius, dx, dy, color);
+    }
+}
+
+// 在 LyricView.java 中添加配置应用
+private void applyShadowSettings() {
+    // 从配置中获取阴影设置
+    float radius = settings.getFloat("theme.fontShadowSettings.radius", 1.6f);
+    float dx = settings.getFloat("theme.fontShadowSettings.dx", 1.5f);
+    float dy = settings.getFloat("theme.fontShadowSettings.dy", 1.3f);
+    String color = settings.getString("theme.fontShadowSettings.color", "rgba(0, 0, 0, 0.15)");
+    
+    textView.updateShadowSettings(radius, dx, dy, parseColor(color));
+}
+
 // https://github.com/Block-Network/StatusBarLyric/blob/main/app/src/main/java/statusbar/lyric/view/LyricSwitchView.kt
 @SuppressLint({"ViewConstructor"})
 public final class LyricSwitchView extends TextSwitcher {
